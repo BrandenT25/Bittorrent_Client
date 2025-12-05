@@ -9,28 +9,26 @@ using namespace std;
 
 class ReadFile{
   int index;
-  ifstring file;
+  ifstream file;
   public:
-    ReadFile(const string fileName&, index(0)){
-      file.open(fileName, ios::in){
-        if(!file.is_open){
+    ReadFile(const string &fileName){
+      index = 0;
+      file.open(fileName, ios::in);
+        if(!file.is_open()){
           throw runtime_error("Failed to open File");
         }
-        file.close();
-      }
     }
   char getNextChar(){
-    file.seekg(index, ios::beg);
-    
-    char c;
-    file.get(c);
-
-    if
+      file.seekg(index, ios::beg);
+      char c;
+      file.get(c);
+      if(!file){
+        cout << "error reading file";
+      }
+      index += 1;
+      return c;
   }
-
-
-
-}
+};
 
 
 enum Types{
@@ -39,7 +37,6 @@ enum Types{
   List,
   Dictionary
 };
-
 
 struct bencodeNode{
   Types type;
@@ -74,9 +71,9 @@ void checkType(char ch){
 
 void parseBencodeInteger(char ch){
   bencodeNode node;
-  while(ch != 'e'):
-    bencodeNode.list.push_back(ch);
-    
+  while(ch != 'e'){
+    break;
+  }
 
 }
 
@@ -84,17 +81,9 @@ string getChar();
 
 
 
-void parseBencode(string torrentFile){
-  ifstream file(torrentFile);
-  if(!file.is_open()){
-    cerr << "Error file not found or not able to open" << endl;
-  }
-  char ch; 
-  while(file.get(ch)){
-    checkType(ch);
-  }
-  file.close();
-  
+void parseBencode(ReadFile& torrentFile){
+  char ch = torrentFile.getNextChar();
+  checkType(ch);
 }
   
 
@@ -108,8 +97,8 @@ string inputHandler(){
 
 
 int main(){
-  string file;
-  file = inputHandler();
-  parseBencode(file);
+  string file = inputHandler();
+  ReadFile torrentFile(file);
+  parseBencode(torrentFile);
 }
 
