@@ -1,1 +1,64 @@
-i2e
+d
+8:announce 38:https://tracker1.example.com/announce
+13:announce-list ll
+    38:https://tracker1.example.com/announce
+    38:https://tracker2.example.com/announce
+  e
+  l
+    35:udp://tracker3.example.com:6969
+  e
+e
+7:comment 59:Example full-feature multi-file torrent for testing purposes
+10:created by 26:Example Torrent Generator 1.0
+13:creation date i1700000000e
+8:encoding 5:UTF-8
+7:private i1e
+6:source 18:EXAMPLE-SOURCE-ID
+8:url-list l
+    44:https://cdn1.example.com/files/archive/
+    44:https://cdn2.example.com/files/archive/
+e
+9:httpseeds l
+    45:https://httpseed.example.com/files/archive/
+e
+4:info d
+    4:name 15:ExampleArchive
+    12:piece length i262144e
+    6:pieces 60:aaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbcccccccccccccccccccc
+    5:files l
+        d
+            6:length i1048576e
+            4:path l
+                4:docs
+                8:readme.md
+            e
+            4:sha1 40:1111111111111111111111111111111111111111
+        e
+        d
+            6:length i2097152e
+            4:path l
+                4:bin
+                12:app-linux-x64
+            e
+            4:sha1 40:2222222222222222222222222222222222222222
+        e
+        d
+            6:length i3145728e
+            4:path l
+                4:bin
+                13:app-windows.exe
+            e
+            4:sha1 40:3333333333333333333333333333333333333333
+        e
+        d
+            6:length i524288e
+            4:path l
+                6:assets
+                10:logo.png
+            e
+            4:sha1 40:4444444444444444444444444444444444444444
+        e
+    e
+e
+e
+
